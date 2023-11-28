@@ -2,7 +2,7 @@
     <h2>حصر الحوادث السنوية</h2>
     <div class=" charts-container">
         <div class="row select-container">
-            <div class="mb-3 col-lg-2 years-select-container">
+            <div class="mb-3 col-lg-2 col-md-4 col-sm-6 years-select-container">
 
                 <select class="form-select form-select-lg years-select" name="" id="">
                     <option value="" selected>2023</option>
@@ -11,7 +11,7 @@
                 </select>
             </div>
 
-            <div class="mb-3 col-lg-2">
+            <div class="mb-3 col-lg-2 col-md-4 col-sm-6">
                 <select class="form-select form-select-lg gray-select" [(ngModel)]="selectedSector"
                     (ngModelChange)="updateCityNames()">
                     <option value="EasternSector">القطاع الشرقي</option>
@@ -20,7 +20,7 @@
                 </select>
             </div>
 
-            <div class="mb-3 col-lg-2">
+            <div class="mb-3 col-lg-2 col-md-4 col-sm-6">
                 <select class="form-select form-select-lg gray-select" name="" id="">
                     <option selected> القطاع الشرقي</option>
                     <option value="">القطاع الغربي</option>
@@ -28,7 +28,7 @@
 
                 </select>
             </div>
-            <div class="mb-3 col-lg-2">
+            <div class="mb-3 col-lg-2 col-md-4 col-sm-6">
                 <select class="form-select form-select-lg gray-select" name="" id="">
                     <option selected> عدد الحوادث المروريه </option>
                     <option value="">الوقائع الأمنية القضايا الجنائية</option>
@@ -40,7 +40,7 @@
 
         <div class="row container p-4">
 
-            <div class="list-container col-lg-3">
+            <div class="list-container col-lg-3 col-md-6 col-sm-12">
                 <input type="search" placeholder="ابحث">
                 <ul>
                     <li *ngFor="let cityName of cityNames">
@@ -50,7 +50,7 @@
                 </ul>
             </div>
 
-            <div class="spline-container col-lg-8">
+            <div class="spline-container col-lg-8 col-md-6 col-sm-12">
                 <div id="chart">
                     <apx-chart [series]="chartOptions.series!" [chart]="chartOptions.chart!"
                         [xaxis]="chartOptions.xaxis!" [stroke]="chartOptions.stroke!" [tooltip]="chartOptions.tooltip!"

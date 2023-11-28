@@ -17,11 +17,30 @@
     }
   }
 }
-.individual-chart-container{
+.individual-chart-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  .individual-chart {
+    border-radius: 10px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .individual-chart-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 30px;
-    .individual-chart{
-        border-radius: 10px;
+    .individual-chart {
+      margin-top: 20px;
     }
   }
+}
+
+@media only screen and (max-width: 768px) {
+  .individual-chart-container {
+    display: block;
+    .individual-chart {
+      margin-top: 20px;
+    }
+  }
+}
