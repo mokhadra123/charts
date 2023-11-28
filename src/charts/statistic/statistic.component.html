@@ -12,11 +12,11 @@
             </div>
 
             <div class="mb-3 col-lg-2">
-                <select class="form-select form-select-lg gray-select" name="" id="">
-                    <option selected>تقرير الربع الاول</option>
-                    <option value="">تقرير الربع الثاني</option>
-                    <option value="">تقرير الربع الثالث</option>
-                    <option value="">تقرير الربع الرابع</option>
+                <select class="form-select form-select-lg gray-select" [(ngModel)]="selectedSector"
+                    (ngModelChange)="updateCityNames()">
+                    <option value="EasternSector">القطاع الشرقي</option>
+                    <option value="westernSector">القطاع الغربي</option>
+                    <option value="middleSector">القطاع الأوسط</option>
                 </select>
             </div>
 
@@ -43,10 +43,10 @@
             <div class="list-container col-lg-3">
                 <input type="search" placeholder="ابحث">
                 <ul>
-                    <!-- <li *ngFor="let cityName of selectedCityNames">
-                        <input type="checkbox" [(ngModel)]="cityName" (change)="updateChart()"> {{ cityName }}
-                    </li> -->
-
+                    <li *ngFor="let cityName of cityNames">
+                        <input type="checkbox" [id]="cityName" />
+                        <label [for]="cityName">{{ cityName }}</label>
+                    </li>
                 </ul>
             </div>
 

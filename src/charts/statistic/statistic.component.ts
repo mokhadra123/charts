@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import * as chartData from '../../assets/datachartupdate.json';
+import * as citiesJson from '../../assets/cities.json';
 import {
   ChartComponent,
   ApexAxisChartSeries,
@@ -20,31 +21,10 @@ export type ChartOptions = {
   dataLabels: ApexDataLabels;
   yaxis: ApexYAxis;
 };
+
 interface CityData {
-  city: string;
-  value: number;
+  [key: string]: string[];
 }
-
-interface SectorData {
-  accident: { big: CityData[]; mid: CityData[]; death: CityData[] };
-  criminalFacts: { [key: string]: CityData[] };
-}
-
-interface QuarterData {
-  easternSector: SectorData;
-  middleSector: SectorData;
-  westernSector: SectorData;
-}
-
-interface YearData {
-  [year: string]: {
-    quarter1: QuarterData;
-    quarter2: QuarterData;
-    quarter3: QuarterData;
-    quarter4: QuarterData;
-  };
-}
-
 @Component({
   selector: 'app-statistic',
   templateUrl: './statistic.component.html',
@@ -53,14 +33,17 @@ interface YearData {
 export class StatisticComponent implements OnInit {
   @ViewChild('chart') chart!: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
-  selectedYear: string = '2023';
-  selectedQuarter: string = 'quarter1';
-  selectedSector: string = 'easternSector';
-  selectedDataType: string = 'accident';
-  selectedCityNames: string[] = [];
+  // selectedYear: string = '2023';
+  // selectedQuarter: string = 'quarter1';
+  // selectedDataType: string = 'accident';
+  // selectedCityNames: string[] = [];
+
+  selectedSector: string = 'EasternSector';
+  cities: CityData = citiesJson;
+  cityNames: string[] = [];
 
   constructor() {
-    const months = ['يناير', 'فبراير ', 'مارس ', 'ابريل'];
+    const months = [' يناير', 'فبراير ', 'مارس ', 'ابريل'];
 
     const accidents = [
       { type: 'كبيرة', data: [0, 0, 0, 0] },
@@ -98,23 +81,10 @@ export class StatisticComponent implements OnInit {
     };
   }
 
-  ngOnInit(): void {}
-
-  // filterData(): CityData[] {
-  //   const selectedQuarterData = (
-  //     chartData[parseInt(this.selectedYear) as number] as YearData
-  //   )[this.selectedQuarter];
-
-  //   const selectedSectorData = selectedQuarterData[this.selectedSector];
-  //   const selectedData = selectedSectorData[this.selectedDataType];
-  //   return selectedData.filter((city) =>
-  //     this.selectedCityNames.includes(city.city)
-  //   );
-  // }
-
-  // updateChart(): void {
-  //   const filteredData = this.filterData();
-  //   // Implement logic to update chart based on filteredData
-  //   // You may need to transform filteredData into a format suitable for your chart library
-  // }
+  ngOnInit(): void {
+    this.updateCityNames();
+  }
+  updateCityNames(): void {
+    this.cityNames = this.cities[this.selectedSector] || [];
+  }
 }
