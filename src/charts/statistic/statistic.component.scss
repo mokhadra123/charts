@@ -1,0 +1,60 @@
+h2 {
+  padding-top: 30px;
+  color: #056a99;
+}
+.select-container {
+  direction: ltr;
+  padding: 20px;
+
+  .form-select {
+    border-radius: 15px;
+    font-size: 15px;
+    text-align: right;
+  }
+  .gray-select {
+    background-color: rgb(241, 240, 240);
+  }
+  .years-select-container {
+    width: 9.5% !important;
+    .years-select {
+      width: 100px !important;
+    }
+  }
+}
+.charts-container {
+  background-color: white;
+  // height: 100vh;
+  transform: translateY(40px);
+  border-radius: 30px 30px 0 0;
+
+  .list-container,
+  .spline-container {
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+  .list-container {
+    // width: 250px;
+    margin-right: 20px;
+    input[type="search"] {
+      border-radius: 10px;
+      padding: 3px 10px;
+      margin: 20px;
+      border: 2px solid lightgray;
+      font-size: 13px;
+      width: 80%;
+    }
+    li {
+      font-size: 17px;
+      input {
+        margin: 5px;
+      }
+    }
+  }
+  .spline-container {
+    margin-right: 80px;
+    #chart {
+      margin-top: 100px;
+    }
+  }
+}
+

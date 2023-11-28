@@ -1,40 +1,67 @@
 <div class="container">
-    <div class="row">
-        <div class="mb-3">
-            <label for="" class="form-label">City</label>
-            <select class="form-select form-select-lg" name="" id="">
-                <option selected>Select one</option>
-                <option value="">New Delhi</option>
-                <option value="">Istanbul</option>
-                <option value="">Jakarta</option>
-            </select>
+    <h2>حصر الحوادث السنوية</h2>
+    <div class=" charts-container">
+        <div class="row select-container">
+            <div class="mb-3 col-lg-2 years-select-container">
+
+                <select class="form-select form-select-lg years-select" name="" id="">
+                    <option value="" selected>2023</option>
+                    <option value="">2022</option>
+
+                </select>
+            </div>
+
+            <div class="mb-3 col-lg-2">
+                <select class="form-select form-select-lg gray-select" name="" id="">
+                    <option selected>تقرير الربع الاول</option>
+                    <option value="">تقرير الربع الثاني</option>
+                    <option value="">تقرير الربع الثالث</option>
+                    <option value="">تقرير الربع الرابع</option>
+                </select>
+            </div>
+
+            <div class="mb-3 col-lg-2">
+                <select class="form-select form-select-lg gray-select" name="" id="">
+                    <option selected> القطاع الشرقي</option>
+                    <option value="">القطاع الغربي</option>
+                    <option value="">القطاع الأوسط</option>
+
+                </select>
+            </div>
+            <div class="mb-3 col-lg-2">
+                <select class="form-select form-select-lg gray-select" name="" id="">
+                    <option selected> عدد الحوادث المروريه </option>
+                    <option value="">الوقائع الأمنية القضايا الجنائية</option>
+
+                </select>
+            </div>
+
         </div>
-        <div class="mb-3">
-            <label for="" class="form-label">City</label>
-            <select class="form-select form-select-lg" name="" id="">
-                <option selected>Select one</option>
-                <option value="">New Delhi</option>
-                <option value="">Istanbul</option>
-                <option value="">Jakarta</option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="" class="form-label">City</label>
-            <select class="form-select form-select-lg" name="" id="">
-                <option selected>Select one</option>
-                <option value="">New Delhi</option>
-                <option value="">Istanbul</option>
-                <option value="">Jakarta</option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="" class="form-label">City</label>
-            <select class="form-select form-select-lg" name="" id="">
-                <option selected>Select one</option>
-                <option value="">New Delhi</option>
-                <option value="">Istanbul</option>
-                <option value="">Jakarta</option>
-            </select>
+
+        <div class="row container p-4">
+
+            <div class="list-container col-lg-3">
+                <input type="search" placeholder="ابحث">
+                <ul>
+                    <!-- <li *ngFor="let cityName of selectedCityNames">
+                        <input type="checkbox" [(ngModel)]="cityName" (change)="updateChart()"> {{ cityName }}
+                    </li> -->
+
+                </ul>
+            </div>
+
+            <div class="spline-container col-lg-8">
+                <div id="chart">
+                    <apx-chart [series]="chartOptions.series!" [chart]="chartOptions.chart!"
+                        [xaxis]="chartOptions.xaxis!" [stroke]="chartOptions.stroke!" [tooltip]="chartOptions.tooltip!"
+                        [dataLabels]="chartOptions.dataLabels!"></apx-chart>
+                </div>
+            </div>
+
+
+
         </div>
     </div>
+
+    <app-individual-chart></app-individual-chart>
 </div>

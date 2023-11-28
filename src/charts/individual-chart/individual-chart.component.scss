@@ -1,0 +1,27 @@
+.select-container {
+  direction: ltr;
+  padding: 20px;
+
+  .form-select {
+    border-radius: 15px;
+    font-size: 15px;
+    text-align: right;
+  }
+  .gray-select {
+    background-color: rgb(241, 240, 240);
+  }
+  .years-select-container {
+    width: 9.5% !important;
+    .years-select {
+      width: 100px !important;
+    }
+  }
+}
+.individual-chart-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    .individual-chart{
+        border-radius: 10px;
+    }
+  }
