@@ -2,8 +2,12 @@
   <h3>الاحصائيات للمناطق</h3>
   <div class="row selects-container">
     <div class="mb-3 col-lg-8 select-container">
-      <select class="form-select form-select-lg">
-        <option value="Q1" selected>تقرير الربع الاول</option>
+      <select
+        class="form-select form-select-lg"
+        [(ngModel)]="selectedQuarter"
+        (ngModelChange)="onQuarterChange()"
+      >
+        <option value="Q1">تقرير الربع الاول</option>
         <option value="Q2">تقرير الربع الثاني</option>
         <option value="Q3">تقرير الربع الثالث</option>
         <option value="Q4">تقرير الربع الرابع</option>

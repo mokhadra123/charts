@@ -20,7 +20,45 @@
   </div>
 
   <div class="individual-chart-container">
-    <div class="individual-chart" style="background-color: #e5f2f8">
+    <div class="individual-chart" style="background: rgba(23, 184, 224, 0.08)">
+      <div class="d-flex justify-content-between align-center p-3">
+        <h6>عدد وفيات الحوادث</h6>
+        <h4>123</h4>
+      </div>
+      <div id="chart">
+        <apx-chart
+          [series]="chartOptions3.series!"
+          [chart]="chartOptions3.chart!"
+          [xaxis]="chartOptions3.xaxis!"
+          [yaxis]="chartOptions3.yaxis!"
+          [fill]="chartOptions3.fill!"
+          [stroke]="chartOptions3.stroke!"
+          [tooltip]="chartOptions3.tooltip!"
+          [dataLabels]="chartOptions3.dataLabels!"
+          [colors]="chartOptions3.colors!"
+        ></apx-chart>
+      </div>
+    </div>
+    <div class="individual-chart" style="background: rgba(23, 184, 224, 0.08)">
+      <div class="d-flex justify-content-between align-center p-3">
+        <h6>عدد وفيات الحوادث</h6>
+        <h4>123</h4>
+      </div>
+      <div id="chart">
+        <apx-chart
+          [series]="chartOptions2.series!"
+          [chart]="chartOptions2.chart!"
+          [xaxis]="chartOptions2.xaxis!"
+          [yaxis]="chartOptions2.yaxis!"
+          [fill]="chartOptions2.fill!"
+          [stroke]="chartOptions2.stroke!"
+          [tooltip]="chartOptions2.tooltip!"
+          [dataLabels]="chartOptions2.dataLabels!"
+          [colors]="chartOptions2.colors!"
+        ></apx-chart>
+      </div>
+    </div>
+    <div class="individual-chart" style="background: rgba(237, 33, 43, 0.03)">
       <div class="d-flex justify-content-between align-center p-3">
         <h6>عدد وفيات الحوادث</h6>
         <h4>123</h4>
@@ -38,57 +76,22 @@
         ></apx-chart>
       </div>
     </div>
-    <div class="individual-chart" style="background-color: #e5f2f8">
+    <div class="individual-chart" style="background: rgba(138, 138, 165, 0.09)">
       <div class="d-flex justify-content-between align-center p-3">
         <h6>عدد وفيات الحوادث</h6>
         <h4>123</h4>
       </div>
       <div id="chart">
         <apx-chart
-          [series]="chartOptions.series!"
-          [chart]="chartOptions.chart!"
-          [xaxis]="chartOptions.xaxis!"
-          [yaxis]="chartOptions.yaxis!"
-          [fill]="chartOptions.fill!"
-          [stroke]="chartOptions.stroke!"
-          [tooltip]="chartOptions.tooltip!"
-          [dataLabels]="chartOptions.dataLabels!"
-        ></apx-chart>
-      </div>
-    </div>
-    <div class="individual-chart" style="background-color: #f6f0f2">
-      <div class="d-flex justify-content-between align-center p-3">
-        <h6>عدد وفيات الحوادث</h6>
-        <h4>123</h4>
-      </div>
-      <div id="chart">
-        <apx-chart
-          [series]="chartOptions.series!"
-          [chart]="chartOptions.chart!"
-          [xaxis]="chartOptions.xaxis!"
-          [yaxis]="chartOptions.yaxis!"
-          [fill]="chartOptions.fill!"
-          [stroke]="chartOptions.stroke!"
-          [tooltip]="chartOptions.tooltip!"
-          [dataLabels]="chartOptions.dataLabels!"
-        ></apx-chart>
-      </div>
-    </div>
-    <div class="individual-chart" style="background-color: #eeedf3">
-      <div class="d-flex justify-content-between align-center p-3">
-        <h6>عدد وفيات الحوادث</h6>
-        <h4>123</h4>
-      </div>
-      <div id="chart">
-        <apx-chart
-          [series]="chartOptions.series!"
-          [chart]="chartOptions.chart!"
-          [xaxis]="chartOptions.xaxis!"
-          [yaxis]="chartOptions.yaxis!"
-          [fill]="chartOptions.fill!"
-          [stroke]="chartOptions.stroke!"
-          [tooltip]="chartOptions.tooltip!"
-          [dataLabels]="chartOptions.dataLabels!"
+          [series]="chartOptions4.series!"
+          [chart]="chartOptions4.chart!"
+          [xaxis]="chartOptions4.xaxis!"
+          [yaxis]="chartOptions4.yaxis!"
+          [fill]="chartOptions4.fill!"
+          [stroke]="chartOptions4.stroke!"
+          [tooltip]="chartOptions4.tooltip!"
+          [dataLabels]="chartOptions4.dataLabels!"
+          [colors]="chartOptions4.colors!"
         ></apx-chart>
       </div>
     </div>
@@ -99,14 +102,16 @@
       </div>
       <div id="chart">
         <apx-chart
-          [series]="chartOptions.series!"
-          [chart]="chartOptions.chart!"
-          [xaxis]="chartOptions.xaxis!"
-          [yaxis]="chartOptions.yaxis!"
-          [fill]="chartOptions.fill!"
-          [stroke]="chartOptions.stroke!"
-          [tooltip]="chartOptions.tooltip!"
-          [dataLabels]="chartOptions.dataLabels!"
+          [series]="chartOptions5.series!"
+          [chart]="chartOptions5.chart!"
+          [xaxis]="chartOptions5.xaxis!"
+          [yaxis]="chartOptions5.yaxis!"
+          [fill]="chartOptions5.fill!"
+          [stroke]="chartOptions5.stroke!"
+          [tooltip]="chartOptions5.tooltip!"
+          [dataLabels]="chartOptions5.dataLabels!"
+          [colors]="chartOptions5.colors!"
+
         ></apx-chart>
       </div>
     </div>
@@ -117,14 +122,16 @@
       </div>
       <div id="chart">
         <apx-chart
-          [series]="chartOptions.series!"
-          [chart]="chartOptions.chart!"
-          [xaxis]="chartOptions.xaxis!"
-          [yaxis]="chartOptions.yaxis!"
-          [fill]="chartOptions.fill!"
-          [stroke]="chartOptions.stroke!"
-          [tooltip]="chartOptions.tooltip!"
-          [dataLabels]="chartOptions.dataLabels!"
+          [series]="chartOptions6.series!"
+          [chart]="chartOptions6.chart!"
+          [xaxis]="chartOptions6.xaxis!"
+          [yaxis]="chartOptions6.yaxis!"
+          [fill]="chartOptions6.fill!"
+          [stroke]="chartOptions6.stroke!"
+          [tooltip]="chartOptions6.tooltip!"
+          [dataLabels]="chartOptions6.dataLabels!"
+          [colors]="chartOptions6.colors!"
+
         ></apx-chart>
       </div>
     </div>

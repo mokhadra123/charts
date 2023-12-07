@@ -1,3 +1,4 @@
+// import { ChartOptions } from './../positions-charts/positions-charts.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
@@ -12,7 +13,6 @@ import {
   ApexYAxis,
   ApexLegend,
 } from 'ng-apexcharts';
-
 
 interface ChartOptions {
   series: ApexAxisChartSeries;
@@ -51,6 +51,7 @@ interface CitiesData {
 export class StatisticComponent implements OnInit {
   @ViewChild('chart') chart!: ChartComponent;
   public chartOptions: Partial<ChartOptions> = {};
+  public ChartOptions2: Partial<ChartOptions> = {};
   public selectedYear: string = '2023';
   public selectedQuarter: string = 'تقرير الربع الاول';
   public selectedSector: string = 'EasternSector';
@@ -98,34 +99,14 @@ export class StatisticComponent implements OnInit {
   };
 
   public selectedCities: string[] = [];
-  constructor() {
-    this.updateChartOptions();
-  }
+  constructor() {}
 
-  
   // ====================== slider ==========================
-  customOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: true,
-    nav: true,
-    navSpeed: 700,
-    navText: ['', ''],
-    responsive: {
-      0: {
-        items: 1,
-      },
-    },
-  };
-  carouselItems: any = [
-    
-
-  ];
 
   // ==============================charts ============================
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.updateChartOptions();
+  }
 
   updateChartOptions(): void {
     const months = ['يناير', 'فبراير', 'مارس', 'ابريل'];
@@ -293,7 +274,9 @@ export class StatisticComponent implements OnInit {
       },
       stroke: {
         curve: 'smooth',
-        colors: ['#ED212B', '#56D9FE', '#4981FD'],
+        lineCap: 'butt',
+        width: 3,
+        dashArray: 0,
       },
       xaxis: {
         categories: months,
@@ -303,9 +286,53 @@ export class StatisticComponent implements OnInit {
           format: 'dd/MM/yy HH:mm',
         },
       },
-      colors: {
-        colors: ['#ED212B', '#56D9FE', '#4981FD'],
+
+      colors: ['#ED212B', '#56D9FE', '#D5E2FE'],
+      // colors: ['#4981FD', '#56D9FE', '#ED212B'],
+
+      legend: {
+        position: 'bottom',
+        fontSize: '14px',
+        fontFamily: 'Tajawal',
+        fontWeight: '500',
+        itemMargin: {
+          horizontal: 27,
+          vertical: 2,
+        },
+        markers: {
+          width: 18,
+          height: 18,
+          offsetX: 3,
+        },
       },
+    };
+    this.ChartOptions2 = {
+      series: selectedData.map((accident: Accident) => ({
+        name: accident.type,
+        data: accident.data,
+      })),
+      chart: {
+        height: 350,
+        type: 'area',
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      stroke: {
+        curve: 'smooth',
+        lineCap: 'butt',
+        width: 1,
+        dashArray: 0,
+      },
+      xaxis: {
+        categories: months,
+      },
+      tooltip: {
+        x: {
+          format: 'dd/MM/yy HH:mm',
+        },
+      },
+      colors: [ '#5FE3A1', '#56D9FE', '#A3A1FB'],
       legend: {
         position: 'bottom',
         fontSize: '14px',
@@ -324,8 +351,6 @@ export class StatisticComponent implements OnInit {
     };
   }
   updateCities(): void {
-    // Update the chart options when the selected cities change
-    // You can customize this based on your specific requirements
     console.log(this.selectedCities);
   }
 }
