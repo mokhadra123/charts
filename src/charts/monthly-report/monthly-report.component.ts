@@ -35,6 +35,7 @@ export type ChartOptions = {
   legend: ApexLegend;
   fill: ApexFill;
   stroke: ApexStroke;
+
 };
 
 @Component({
@@ -51,21 +52,30 @@ export class MonthlyReportComponent {
     this.chartOptions = {
       series: [
         {
-          name: 'distibuted',
+          name: 'حوادث أقل',
           data: [
             21, 22, 10, 28, 16, 21, 13, 30, 50, 40, 30, 20, 21, 22, 10, 28, 16,
-            21, 13, 30, 50, 40, 30, 20, 50, 40, 30, 20, 50,
+            21, 13, 30,
+          ],
+        },
+        {
+          name: 'حوادث متوسطه',
+          data: [
+            21, 22, 10, 28, 16, 21, 13, 30, 50, 40, 30, 20, 21, 22, 10, 28, 16,
+            21, 13, 30,
+          ],
+        },
+        {
+          name: 'حوادث عاليه',
+          data: [
+            21, 22, 10, 28, 16, 21, 13, 30, 50, 40, 30, 20, 21, 22, 10, 28, 16,
+            21, 13, 30,
           ],
         },
       ],
       chart: {
         height: 350,
         type: 'bar',
-        events: {
-          click: function (chart, w, e) {
-            // console.log(chart, w, e)
-          },
-        },
       },
       colors: ['#F36E32', '#FECD54', '#2CD889'],
       plotOptions: {
@@ -78,7 +88,19 @@ export class MonthlyReportComponent {
         enabled: false,
       },
       legend: {
-        show: false,
+        position: 'right',
+        fontSize: '14px',
+        fontFamily: 'Tajawal',
+        fontWeight: '500',
+        itemMargin: {
+          horizontal: 27,
+          vertical: 2,
+        },
+        markers: {
+          width: 18,
+          height: 18,
+          offsetX: 3,
+        },
       },
       grid: {
         show: false,
@@ -105,15 +127,8 @@ export class MonthlyReportComponent {
           [18],
           [19],
           [20],
-          [21],
-          [22],
-          [23],
-          [24],
-          [25],
-          [26],
-          [27],
-          [28],
-          [29],
+   
+  
         ],
         labels: {
           style: {
@@ -156,6 +171,7 @@ export class MonthlyReportComponent {
           ],
         },
       ],
+      
       chart: {
         height: 350,
         type: 'area',
@@ -167,8 +183,8 @@ export class MonthlyReportComponent {
         curve: 'smooth',
         lineCap: 'butt',
         width: 3,
-        colors:['#FECD54','#2CD889','#F7617D'],
-        dashArray: [6,0,6],
+        colors: ['#FECD54', '#2CD889', '#F7617D'],
+        dashArray: [6, 0, 6],
       },
       xaxis: {
         categories: [
@@ -207,16 +223,15 @@ export class MonthlyReportComponent {
         type: 'gradient',
         gradient: {
           shadeIntensity: 1,
-          opacityFrom: [0,0.4,0],
-          opacityTo: [0,0.8,0],
+          opacityFrom: [0, 0.4, 0],
+          opacityTo: [0, 0.8, 0],
           stops: [0, 90, 100],
         },
       },
-      
 
       colors: ['#FECD54', '#4CA07A', '#F7617D'],
       legend: {
-        position: 'bottom',
+        position: 'right',
         fontSize: '14px',
         fontFamily: 'Tajawal',
         fontWeight: '500',
