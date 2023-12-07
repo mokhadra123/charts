@@ -1,0 +1,144 @@
+h2 {
+  padding: 30px 0 22px;
+  color: #056a99;
+  font-weight: bold;
+  font-size: 25px;
+}
+.charts-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 30px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  .select-container {
+    direction: ltr;
+    padding: 15px;
+
+    select {
+      font-size: 15px;
+      text-align: right;
+      padding: 10px;
+      direction: rtl;
+      margin-left: 5px;
+      border-color: #8a8aa5;
+      border-width: 0.5px;
+      border-style: solid;
+      border-radius: 15px;
+    }
+
+    .report-select {
+      background: #f1f1f7;
+    }
+
+    .years-select-container {
+      width: 18% !important;
+    }
+  }
+
+  .tabel-title {
+    font-size: 23px;
+  }
+
+  .table-container {
+    padding: 10px;
+    thead {
+      margin-bottom: 10px;
+    }
+    .tr-head {
+      background: rgba(238, 238, 242, 0.7);
+      height: 51px;
+      margin-bottom: 12px;
+    }
+    tr {
+      font-size: 15px;
+      font-weight: 500;
+      th,
+      td {
+        padding: 12px;
+      }
+      th {
+        margin-bottom: 15px;
+      }
+      .first-th {
+        border-radius: 0 10px 10px 0;
+      }
+      .last-th {
+        border-radius: 10px 0 0 10px;
+      }
+      .date-td {
+        width: 120px;
+      }
+    }
+  }
+
+  .list-container,
+  .spline-container {
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+
+  .spline-container {
+    .title-container {
+      text-align: center;
+      transform: translate(-210px, 87px);
+      width: fit-content;
+      span {
+        width: 150px;
+        font-family: "Tajawal";
+        font-size: 16px;
+        font-weight: 500;
+        font-style: normal;
+        text-align: right;
+        color: #8a8aa5;
+      }
+      .total-crimes {
+        text-align: center;
+        font-size: 48px;
+        font-weight: bold;
+        color: #12123c;
+      }
+    }
+
+    #chart {
+      transform: translate(84px, -46px);
+    }
+  }
+}
+
+::ng-deep .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-center,
+::ng-deep .apexcharts-legend.apx-legend-position-top.apexcharts-align-center {
+  transform: translate(-73px, 3px);
+}
+
+/* Media Query for screens smaller than 768px */
+@media (max-width: 1008px) {
+  .charts-container {
+    display: block;
+    .spline-container {
+      margin-top: 20px;
+    }
+  }
+}
+
+/* Media Query for screens smaller than 576px (phones) */
+@media (max-width: 576px) {
+  .charts-container {
+    select {
+      margin-top: 20px;
+    }
+
+    .spline-container {
+      margin-right: 0;
+      .title-container {
+        transform: translate(-159px, 87px);
+      }
+      ::ng-deep
+        .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-center,
+      ::ng-deep
+        .apexcharts-legend.apx-legend-position-top.apexcharts-align-center {
+        transform: translate(-17px, 3px);
+      }
+    }
+  }
+}

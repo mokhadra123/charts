@@ -1,0 +1,9 @@
+<svg id="icn-requests" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+  <circle id="Ellipse_54" data-name="Ellipse 54" cx="2.513" cy="2.513" r="2.513" transform="translate(12.039 8.649)" fill="#8a8aa5"/>
+  <path id="Path_357" data-name="Path 357" d="M6.779,118.4A3.4,3.4,0,0,0,3.39,115h0A3.4,3.4,0,0,0,0,118.4H0a1.157,1.157,0,0,0,1.154,1.158H5.625A1.157,1.157,0,0,0,6.779,118.4Z" transform="translate(11.221 -101.558)" fill="#8a8aa5"/>
+  <path id="Path_358" data-name="Path 358" d="M67.234,0a1.987,1.987,0,0,1,1.987,1.987v10.85a.584.584,0,0,1-.942.463l-2.087-1.611H59.987A1.987,1.987,0,0,1,58,9.7V1.987A1.987,1.987,0,0,1,59.987,0Z" transform="translate(-58)" fill="#8a8aa5" fill-rule="evenodd"/>
+  <rect id="Rectangle_332" data-name="Rectangle 332" width="7.013" height="1.169" rx="0.584" transform="translate(2.104 3.156)" fill="#d3f0f8"/>
+  <rect id="Rectangle_333" data-name="Rectangle 333" width="3.857" height="1.169" rx="0.584" transform="translate(5.26 5.26)" fill="#d3f0f8"/>
+  <rect id="Rectangle_334" data-name="Rectangle 334" width="2.805" height="1.169" rx="0.584" transform="translate(2.104 5.26)" fill="#d3f0f8"/>
+  <rect id="Rectangle_335" data-name="Rectangle 335" width="7.013" height="1.169" rx="0.584" transform="translate(2.104 7.364)" fill="#d3f0f8"/>
+</svg>

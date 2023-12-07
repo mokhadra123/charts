@@ -1,0 +1,86 @@
+<div class="mid-cate-container">
+  <div class="left-cate">
+    <div
+      class="d-flex justify-content-between align-items-center header-container"
+    >
+      <h3>عدد الحوادث المروريه</h3>
+      <div class="select-container">
+        <select
+          [(ngModel)]="selectedYear"
+          (change)="onYearChange()"
+          class="form-select form-select-lg"
+        >
+          <option value="2023" selected>2023</option>
+          <option value="2022">2022</option>
+        </select>
+
+        <select
+          [(ngModel)]="selectedQuarter"
+          (change)="onQuarterChange()"
+          class="form-select form-select-lg gray-select"
+        >
+          <option value="Q1" selected>تقرير الربع الاول</option>
+          <option value="Q2">تقرير الربع الثاني</option>
+          <option value="Q3">تقرير الربع الثالث</option>
+          <option value="Q4">تقرير الربع الرابع</option>
+        </select>
+
+        <select
+          class="form-select form-select-lg gray-select"
+          name=""
+          id=""
+          (change)="onQuarterChange()"
+        >
+          <option selected>القطاع الشرقي</option>
+          <option value="">القطاع الغربي</option>
+          <option value="">القطاع الاوسط</option>
+        </select>
+      </div>
+    </div>
+    <div id="chart">
+      <apx-chart
+        [series]="chartOptions.series!"
+        [chart]="chartOptions.chart!"
+        [responsive]="chartOptions.responsive!"
+        [labels]="chartOptions.labels!"
+        [legend]="chartOptions.legend!"
+      ></apx-chart>
+    </div>
+  </div>
+
+  <div class="right-cate">
+    <div
+      class="d-flex justify-content-between align-item-center header-container"
+    >
+      <h3>الوقائع الأمنيه القضايا الجنائيه</h3>
+      <div class="row select-container">
+        <select class="form-select form-select-lg years-select" name="" id="">
+          <option value="" selected>2023</option>
+          <option value="">2022</option>
+          <option value="">2021</option>
+        </select>
+
+        <select class="form-select form-select-lg gray-select" name="" id="">
+          <option selected>تقرير الربع الاول</option>
+          <option value="">تقرير الربع الثاني</option>
+          <option value="">تقرير الربع الثالث</option>
+          <option value="">تقرير الربع الرابع</option>
+        </select>
+
+        <select class="form-select form-select-lg gray-select" name="" id="">
+          <option selected>القطاع الشرقي</option>
+          <option value="">القطاع الغربي</option>
+          <option value="">القطاع الاوسط</option>
+        </select>
+      </div>
+    </div>
+    <div id="chart">
+      <apx-chart
+        [series]="barChartOptions.series2!"
+        [chart]="barChartOptions.chart2!"
+        [legend]="barChartOptions.legend!"
+        [labels]="barChartOptions.labels!"
+      ></apx-chart>
+    </div>
+  </div>
+</div>

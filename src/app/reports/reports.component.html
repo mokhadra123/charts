@@ -1,0 +1,15 @@
+<div class="container mt-4 report-container">
+    <h2>التقارير</h2>
+    <div class="cards-container">
+        <div *ngFor="let card of cartsData" class="card" [routerLink]="card.routerLink">
+                <img [src]="card.img" [alt]="card.title" />
+            <div class="content">
+                <h4>{{card.title}}</h4>
+                <p>
+                    {{card.desc}}
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>

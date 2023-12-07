@@ -1,0 +1,48 @@
+// @import 'swiper/swiper.scss';
+// @import 'swiper/components/navigation/navigation.scss';
+// @import 'swiper/components/pagination/pagination.scss';
+
+.monthly-report-container {
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  h3 {
+    font-size: 17px;
+  }
+  .select-container {
+    direction: ltr;
+    display: flex;
+    align-items: center;
+
+    .form-select {
+      margin-right: 12px;
+      border-radius: 12px;
+      font-size: 13px;
+      text-align: right;
+      width: fit-content;
+    }
+
+    .gray-select {
+      background-color: #f1f1f7;
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  .header-container {
+    display: block !important;
+    h3 {
+      text-align: center;
+      font-size: 22px !important;
+      margin: 15px 0 !important;
+    }
+    .select-container {
+      padding: 15px;
+      display: block;
+      .form-select {
+        width: 90%;
+        margin: 0 auto 10px;
+      }
+    }
+  }
+}

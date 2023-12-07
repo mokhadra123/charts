@@ -1,0 +1,59 @@
+<div class="container py-5">
+  <h2>الرسم البياني لتقرير الوقائع</h2>
+
+  <div class="charts-container">
+    <div class="list-container p-3">
+      <div class="d-flex justify-content-between align-items-center">
+
+        <h3 class="tabel-title">الجدول الزمني للقوائع</h3>
+
+        <div class="select-container ">
+          <select [(ngModel)]="selectedYear" (change)="onYearChange()">
+            <option value="2023" selected>2023</option>
+            <option value="2022">2022</option>
+          </select>
+          <select [(ngModel)]="selectedQuarter" (change)="onQuarterChange()" class="report-select">
+            <option value="Q1" selected>تقرير الربع الاول</option>
+            <option value="Q2">تقرير الربع الثاني</option>
+            <option value="Q3">تقرير الربع الثالث</option>
+            <option value="Q4">تقرير الربع الرابع</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="table-container row px-4">
+        <table class="">
+          <thead>
+            <tr class="tr-head">
+              <th class="first-th"></th>
+              <th>تاريخ الوقائع</th>
+              <th>الوقائع</th>
+              <th class="last-th">عدد الحالات</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of tableData; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td class="date-td">{{ data.date }}</td>
+              <td>{{ data.incident }}</td>
+              <td>{{ data.cases }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="spline-container  ">
+      <div class="title-container">
+        <span>اجمالي عدد المخالفات</span>
+        <h3 class="total-crimes">{{ totalCrimes }}</h3>
+      </div>
+      <div id="chart">
+        <apx-chart [series]="chartOptions.series!" [chart]="chartOptions.chart!" [responsive]="chartOptions.responsive!"
+          [labels]="chartOptions.labels!" [dataLabels]="chartOptions.dataLabels!" [legend]="chartOptions.legend!"
+          [plotOptions]="chartOptions.plotOptions !"></apx-chart>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,73 @@
+<div class="container monthly-report-container">
+  <div
+    class="d-flex justify-content-between align-item-center header-container"
+  >
+    <h3>التقرير الشهري لحوادث المرور للمنطقه الصناعيه</h3>
+    <div class="row select-container">
+      <select class="form-select form-select-lg">
+        <option value="2023" selected>2023</option>
+        <option value="2022">2022</option>
+      </select>
+
+      <select class="form-select form-select-lg gray-select">
+        <option value="Q1" selected>المدينه المنوره</option>
+        <option value="Q2">مكة المكره</option>
+        <option value="Q3">الطائف</option>
+        <option value="Q4">نجران</option>
+      </select>
+
+      <select class="form-select form-select-lg gray-select">
+        <option value="Q1" selected>تقرير الربع الاول</option>
+        <option value="Q2">تقرير الربع الثاني</option>
+        <option value="Q3">تقرير الربع الثالث</option>
+        <option value="Q4">تقرير الربع الرابع</option>
+      </select>
+
+      <select class="form-select form-select-lg gray-select" name="" id="">
+        <option selected>القطاع الشرقي</option>
+        <option value="">القطاع الغربي</option>
+        <option value="">القطاع الاوسط</option>
+      </select>
+    </div>
+  </div>
+  <!-- <swiper
+    *ngIf="chartOptions && chartOptions.series && chartOptions.series.length"
+    [slidesPerView]="1"
+    [spaceBetween]="50"
+    [navigation]="true"
+    [pagination]="{ type: 'fraction' }"
+    [centeredSlides]="true"
+    [keyboard]="{ enabled: true }"
+    [virtual]="true"
+    class="my-swiper"
+  >
+    <ng-template swiperSlide> -->
+      <apx-chart
+        #chart
+        [series]="chartOptions.series!"
+        [chart]="chartOptions.chart!"
+        [dataLabels]="chartOptions.dataLabels!"
+        [plotOptions]="chartOptions.plotOptions!"
+        [yaxis]="chartOptions.yaxis!"
+        [xaxis]="chartOptions.xaxis!"
+        [grid]="chartOptions.grid!"
+        [colors]="chartOptions.colors!"
+        [legend]="chartOptions.legend!"
+      ></apx-chart>
+    <!-- </ng-template>
+    <ng-template swiperSlide>
+      <apx-chart
+        #chart
+        [series]="chartOptions.series!"
+        [chart]="chartOptions.chart!"
+        [dataLabels]="chartOptions.dataLabels!"
+        [plotOptions]="chartOptions.plotOptions!"
+        [yaxis]="chartOptions.yaxis!"
+        [xaxis]="chartOptions.xaxis!"
+        [grid]="chartOptions.grid!"
+        [colors]="chartOptions.colors!"
+        [legend]="chartOptions.legend!"
+      ></apx-chart>
+    </ng-template>
+  </swiper> -->
+</div>

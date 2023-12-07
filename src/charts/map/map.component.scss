@@ -1,0 +1,34 @@
+h3 {
+  font-size: 17px;
+}
+.selects-container {
+  direction: ltr;
+  select {
+    width: 160px;
+    font-size: 14px;
+    border-radius: 12px;
+  }
+}
+.map-container {
+  display: flex;
+  justify-content: space-evenly;
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  .map-image {
+    transform: translate(45px, -18px);
+    width: 437px;
+    height: 380px;
+  }
+}
+
+@media (max-width: 477px) {
+  .map-container {
+    display: block;
+    .map-image {
+      transform: translate(0px, 16px);
+      width: 300px;
+    }
+  }
+}

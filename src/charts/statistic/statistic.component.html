@@ -1,0 +1,77 @@
+<div class="container">
+  <h2>حصر الحوادث السنوية</h2>
+  <div class="charts-container">
+    <div class="select-container">
+      <select
+        class="form-select form-select-lg years-select"
+        [(ngModel)]="selectedYear"
+        (change)="updateChartOptions()"
+      >
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+      </select>
+
+      <select
+        class="form-select form-select-lg gray-select"
+        [(ngModel)]="selectedQuarter"
+        (change)="updateChartOptions()"
+      >
+        <option value="تقرير الربع الاول">تقرير الربع الاول</option>
+        <option value="تقرير الربع الثاني">تقرير الربع الثاني</option>
+        <option value="تقرير الربع الثالث">تقرير الربع الثالث</option>
+        <option value="تقرير الربع الرابع">تقرير الربع الرابع</option>
+      </select>
+
+      <select
+        class="form-select form-select-lg gray-select"
+        [(ngModel)]="selectedSector"
+        (change)="updateChartOptions()"
+      >
+        <option value="EasternSector">القطاع الشرقي</option>
+        <option value="westernSector">القطاع الغربي</option>
+        <option value="middleSector">القطاع الأوسط</option>
+      </select>
+
+      <select class="form-select form-select-lg gray-select" name="" id="">
+        <option selected>عدد الحوادث المروريه</option>
+        <option value="">الوقائع الأمنية القضايا الجنائية</option>
+      </select>
+    </div>
+
+    <div class="container p-5 statistics-container">
+      <div class="list-container p-3">
+        <input type="search" placeholder="ابحث" />
+        <ul>
+          <li class="my-2" *ngFor="let city of citiesData[selectedSector]">
+            <input
+              type="checkbox"
+              [(ngModel)]="selectedCities"
+              (change)="updateCities()"
+              [value]="city"
+            />
+            {{ city }}
+          </li>
+        </ul>
+      </div>
+      <div class="spline-container">
+        <div id="chart">
+          <apx-chart
+            [series]="chartOptions.series!"
+            [chart]="chartOptions.chart!"
+            [xaxis]="chartOptions.xaxis!"
+            [stroke]="chartOptions.stroke!"
+            [tooltip]="chartOptions.tooltip!"
+            [dataLabels]="chartOptions.dataLabels!"
+            [legend]="chartOptions.legend!"
+          >
+          </apx-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-individual-chart></app-individual-chart>
+  <app-middle-categories></app-middle-categories>
+  <app-positions-charts></app-positions-charts>
+  <app-monthly-report></app-monthly-report>
+</div>

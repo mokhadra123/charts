@@ -1,0 +1,53 @@
+.positions-container {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 20px;
+  .map-container {
+    background-color: #fffbf0;
+  }
+  .demo-chart-container {
+    background-color: white;
+    .select-container {
+      direction: ltr;
+      // padding: 20px;
+      display: flex;
+      align-items: center;
+
+      .form-select {
+        margin-right: 12px;
+        border-radius: 12px;
+        font-size: 13px;
+        text-align: right;
+        width: fit-content;
+      }
+
+      
+    }
+  }
+  .map-container,
+  .demo-chart-container {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 20px;
+    padding: 20px;
+    h3 {
+      font-size: 17px;
+    }
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .positions-container {
+    display: block !important;
+    .demo-chart-container {
+      margin-top: 20px;    .select-container {
+        padding: 15px;
+        display: block;
+        .form-select {
+          width: 90%;
+          margin-bottom: 10px;
+        }
+      }
+      
+    }
+  }
+}

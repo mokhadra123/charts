@@ -1,0 +1,40 @@
+<div class="positions-container">
+  <div class="map-container">
+    <app-map></app-map>
+  </div>
+  <div class="demo-chart-container">
+    <div class="d-flex justify-content-between align-item-center">
+      <h3>احصائيات القطاع</h3>
+      <div class=" select-container">
+        <select class="form-select form-select-lg ">
+          <option value="Q1" selected>تقرير الربع الاول</option>
+          <option value="Q2">تقرير الربع الثاني</option>
+          <option value="Q3">تقرير الربع الثالث</option>
+          <option value="Q4">تقرير الربع الرابع</option>
+        </select>
+
+        <select
+          class="form-select form-select-lg  ml-3"
+          name=""
+          id=""
+          style="margin-right: 50px"
+        >
+          <option selected>القطاع الشرقي</option>
+          <option value="">القطاع الغربي</option>
+          <option value="">القطاع الاوسط</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="chart">
+      <apx-chart
+        [series]="chartOptions.series!"
+        [chart]="chartOptions.chart!"
+        [labels]="chartOptions.labels!"
+        [plotOptions]="chartOptions.plotOptions!"
+        [fill]="chartOptions.fill!"
+        [stroke]="chartOptions.stroke!"
+      ></apx-chart>
+    </div>
+  </div>
+</div>
