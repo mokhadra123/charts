@@ -11,6 +11,7 @@ import {
   ApexGrid,
   ApexFill,
   ApexStroke,
+  ApexResponsive,
 } from 'ng-apexcharts';
 
 type ApexXAxis = {
@@ -35,7 +36,7 @@ export type ChartOptions = {
   legend: ApexLegend;
   fill: ApexFill;
   stroke: ApexStroke;
-
+  responsive: ApexResponsive[];
 };
 
 @Component({
@@ -77,6 +78,17 @@ export class MonthlyReportComponent {
         height: 350,
         type: 'bar',
       },
+      responsive: [
+        {
+          breakpoint: 480,
+          options: {
+            legend: {
+              position: 'bottom',
+            },
+          },
+        },
+      ],
+
       colors: ['#F36E32', '#FECD54', '#2CD889'],
       plotOptions: {
         bar: {
@@ -127,8 +139,6 @@ export class MonthlyReportComponent {
           [18],
           [19],
           [20],
-   
-  
         ],
         labels: {
           style: {
@@ -171,7 +181,16 @@ export class MonthlyReportComponent {
           ],
         },
       ],
-      
+      responsive: [
+        {
+          breakpoint: 480,
+          options: {
+            legend: {
+              position: 'bottom',
+            },
+          },
+        },
+      ],
       chart: {
         height: 350,
         type: 'area',
