@@ -1,5 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-import { Swiper } from 'swiper';
 
 import {
   ApexChart,
@@ -10,6 +9,8 @@ import {
   ApexYAxis,
   ApexLegend,
   ApexGrid,
+  ApexFill,
+  ApexStroke,
 } from 'ng-apexcharts';
 
 type ApexXAxis = {
@@ -32,6 +33,8 @@ export type ChartOptions = {
   grid: ApexGrid;
   colors: string[];
   legend: ApexLegend;
+  fill: ApexFill;
+  stroke: ApexStroke;
 };
 
 @Component({
@@ -42,7 +45,7 @@ export type ChartOptions = {
 export class MonthlyReportComponent {
   @ViewChild('chart') chart!: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
-  @ViewChild('swiperContainer') swiperContainer?: Swiper;
+  public chartOptions2: Partial<ChartOptions>;
 
   constructor() {
     this.chartOptions = {
@@ -64,16 +67,7 @@ export class MonthlyReportComponent {
           },
         },
       },
-      colors: [
-        '#008FFB',
-        '#00E396',
-        '#FEB019',
-        '#FF4560',
-        '#775DD0',
-        '#546E7A',
-        '#26a69a',
-        '#D10CE8',
-      ],
+      colors: ['#F36E32', '#FECD54', '#2CD889'],
       plotOptions: {
         bar: {
           columnWidth: '30%',
@@ -138,11 +132,104 @@ export class MonthlyReportComponent {
         },
       },
     };
-  }
+    this.chartOptions2 = {
+      series: [
+        {
+          name: 'distibuted',
+          data: [
+            21, 22, 10, 28, 16, 21, 13, 30, 35, 40, 30, 20, 21, 22, 10, 28, 16,
+            21, 13, 30, 35, 40, 30, 20, 50, 40, 30, 20, 50,
+          ],
+        },
+        {
+          name: 'distibuted',
+          data: [
+            10, 26, 20, 22, 17, 21, 19, 20, 30, 35, 30, 20, 21, 22, 15, 28, 16,
+            21, 13, 30, 32, 35, 37, 40, 38, 37, 30, 32, 23,
+          ],
+        },
+        {
+          name: 'distibuted',
+          data: [
+            30, 14, 20, 43, 16, 32, 50, 70, 45, 33, 30, 14, 10, 9, 36, 48, 51,
+            40, 17, 20, 34, 47, 42, 39, 37, 39, 38, 13, 20,
+          ],
+        },
+      ],
+      chart: {
+        height: 350,
+        type: 'area',
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      stroke: {
+        curve: 'smooth',
+        lineCap: 'butt',
+        width: 3,
+        colors:['#FECD54','#2CD889','#F7617D'],
+        dashArray: [6,0,6],
+      },
+      xaxis: {
+        categories: [
+          [1],
+          [2],
+          [3],
+          [4],
+          [5],
+          [6],
+          [7],
+          [8],
+          [9],
+          [10],
+          [11],
+          [12],
+          [13],
+          [14],
+          [15],
+          [16],
+          [17],
+          [18],
+          [19],
+          [20],
+          [21],
+          [22],
+          [23],
+          [24],
+          [25],
+          [26],
+          [27],
+          [28],
+          [29],
+        ],
+      },
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shadeIntensity: 1,
+          opacityFrom: [0,0.4,0],
+          opacityTo: [0,0.8,0],
+          stops: [0, 90, 100],
+        },
+      },
+      
 
-  ngAfterViewInit() {
-    if (this.swiperContainer) {
-      console.log('Swiper instance:', this.swiperContainer);
-    }
+      colors: ['#FECD54', '#4CA07A', '#F7617D'],
+      legend: {
+        position: 'bottom',
+        fontSize: '14px',
+        fontFamily: 'Tajawal',
+        fontWeight: '500',
+        itemMargin: {
+          horizontal: 27,
+          vertical: 2,
+        },
+        markers: {
+          width: 18,
+          height: 18,
+          offsetX: 3,
+        },
+      },
+    };
   }
 }

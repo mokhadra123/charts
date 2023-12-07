@@ -42,19 +42,31 @@
     class="my-swiper"
   >
     <ng-template swiperSlide> -->
-      <apx-chart
-        #chart
-        [series]="chartOptions.series!"
-        [chart]="chartOptions.chart!"
-        [dataLabels]="chartOptions.dataLabels!"
-        [plotOptions]="chartOptions.plotOptions!"
-        [yaxis]="chartOptions.yaxis!"
-        [xaxis]="chartOptions.xaxis!"
-        [grid]="chartOptions.grid!"
-        [colors]="chartOptions.colors!"
-        [legend]="chartOptions.legend!"
-      ></apx-chart>
-    <!-- </ng-template>
+  <apx-chart
+    #chart
+    [series]="chartOptions.series!"
+    [chart]="chartOptions.chart!"
+    [dataLabels]="chartOptions.dataLabels!"
+    [plotOptions]="chartOptions.plotOptions!"
+    [yaxis]="chartOptions.yaxis!"
+    [xaxis]="chartOptions.xaxis!"
+    [grid]="chartOptions.grid!"
+    [colors]="chartOptions.colors!"
+    [legend]="chartOptions.legend!"
+  ></apx-chart>
+
+  <apx-chart
+    #chart
+    [series]="chartOptions2.series!"
+    [chart]="chartOptions2.chart!"
+    [xaxis]="chartOptions2.xaxis!"
+    [stroke]="chartOptions2.stroke!"
+[fill]="chartOptions2.fill!"
+    [dataLabels]="chartOptions2.dataLabels!"
+    [colors]="chartOptions2.colors!"
+    [legend]="chartOptions2.legend!"
+  ></apx-chart>
+  <!-- </ng-template>
     <ng-template swiperSlide>
       <apx-chart
         #chart

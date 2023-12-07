@@ -10,7 +10,6 @@ import { MiddleCategoriesComponent } from './middle-categories/middle-categories
 import { PositionsChartsComponent } from './positions-charts/positions-charts.component';
 import { MonthlyReportComponent } from './monthly-report/monthly-report.component';
 import { MapComponent } from './map/map.component';
-import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   declarations: [
@@ -21,15 +20,8 @@ import { SwiperModule } from 'swiper/angular';
     PositionsChartsComponent,
     MonthlyReportComponent,
     MapComponent,
-
   ],
-  imports: [
-    CommonModule,
-    NgApexchartsModule,
-    HttpClientModule,
-    FormsModule,
-    SwiperModule,
-  ],
+  imports: [CommonModule, NgApexchartsModule, HttpClientModule, FormsModule],
   exports: [StatisticComponent, CrimesComponent],
 })
 export class ChartsModule {}

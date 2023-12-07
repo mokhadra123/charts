@@ -288,7 +288,6 @@ export class StatisticComponent implements OnInit {
       },
 
       colors: ['#ED212B', '#56D9FE', '#D5E2FE'],
-      // colors: ['#4981FD', '#56D9FE', '#ED212B'],
 
       legend: {
         position: 'bottom',
