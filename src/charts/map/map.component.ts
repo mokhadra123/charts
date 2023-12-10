@@ -7,15 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./map.component.scss'],
 })
 export class MapComponent {
-  selectedQuarter: string = 'Q1'; // Default selected quarter
-
+  selectedQuarter: string = 'Q1'; 
   constructor() {}
 
   onQuarterChange() {
-    // Implement the logic you want to execute when the quarter changes
-    console.log('Selected Quarter:', this.selectedQuarter);
 
-    // Navigate to the same route to trigger a refresh
-    window.location.reload();
+
   }
 }

@@ -26,6 +26,22 @@
       الأمنية للقضايا الجنائية</span
     >
   </div>
-
-  <img class="map-image" src="../../assets/images/map.png" alt="" />
+  <img
+    *ngIf="selectedQuarter === 'Q1' || selectedQuarter === 'Q4'"
+    class="map-image"
+    src="../../assets/images/west.png"
+    alt=""
+  />
+  <img
+    *ngIf="selectedQuarter === 'Q2'"
+    class="map-image"
+    src="../../assets/images/East.png"
+    alt=""
+  />
+  <img
+    *ngIf="selectedQuarter === 'Q3'"
+    class="map-image"
+    src="../../assets/images/middle.png"
+    alt=""
+  />
 </div>
