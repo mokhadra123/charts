@@ -2,7 +2,6 @@
 // @import '~swiper/components/navigation/navigation';
 // @import '~swiper/components/pagination/pagination';
 
-
 .monthly-report-container {
   margin-top: 50px;
   padding: 20px;
@@ -26,6 +25,15 @@
 
     .gray-select {
       background-color: #f1f1f7;
+    }
+  }
+  .charts-container {
+    display: flex;
+    align-items: center;
+
+  justify-content: space-around;
+    #chart {
+      width: 100%;
     }
   }
 }

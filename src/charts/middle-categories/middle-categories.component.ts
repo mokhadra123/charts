@@ -66,6 +66,13 @@ export class MiddleCategoriesComponent {
       chart2: {
         type: 'bar',
         height: 350,
+        stacked: true,
+        toolbar: {
+          show: true,
+        },
+        zoom: {
+          enabled: true,
+        },
       },
       plotOptions: {
         bar: {

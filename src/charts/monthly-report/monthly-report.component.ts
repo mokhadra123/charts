@@ -48,6 +48,8 @@ export class MonthlyReportComponent {
   @ViewChild('chart') chart!: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
   public chartOptions2: Partial<ChartOptions>;
+  public showChart1: boolean = true;
+  public showChart2: boolean = false;
 
   constructor() {
     this.chartOptions = {
@@ -265,5 +267,9 @@ export class MonthlyReportComponent {
         },
       },
     };
+  }
+  chartsSlider() {
+    this.showChart1 = !this.showChart1;
+    this.showChart2 = !this.showChart2;
   }
 }

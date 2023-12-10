@@ -99,10 +99,15 @@ export class StatisticComponent implements OnInit {
   };
 
   public selectedCities: string[] = [];
+  public showChart1: boolean = true;
+  public showChart2: boolean = false;
   constructor() {}
 
   // ====================== slider ==========================
-
+  chartsSlider (){
+    this.showChart1 = !this.showChart1;
+    this.showChart2 = !this.showChart2;
+   }
   // ==============================charts ============================
   ngOnInit(): void {
     this.updateChartOptions();
@@ -331,7 +336,7 @@ export class StatisticComponent implements OnInit {
           format: 'dd/MM/yy HH:mm',
         },
       },
-      colors: [ '#5FE3A1', '#56D9FE', '#A3A1FB'],
+      colors: ['#5FE3A1', '#56D9FE', '#A3A1FB'],
       legend: {
         position: 'bottom',
         fontSize: '14px',

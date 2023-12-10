@@ -30,47 +30,11 @@
       </select>
     </div>
   </div>
-  <!-- <swiper
-    *ngIf="chartOptions && chartOptions.series && chartOptions.series.length"
-    [slidesPerView]="1"
-    [spaceBetween]="50"
-    [navigation]="true"
-    [pagination]="{ type: 'fraction' }"
-    [centeredSlides]="true"
-    [keyboard]="{ enabled: true }"
-    [virtual]="true"
-    class="my-swiper"
-  >
-    <ng-template swiperSlide> -->
-  <apx-chart
-    #chart
-    [series]="chartOptions.series!"
-    [chart]="chartOptions.chart!"
-    [dataLabels]="chartOptions.dataLabels!"
-    [plotOptions]="chartOptions.plotOptions!"
-    [yaxis]="chartOptions.yaxis!"
-    [xaxis]="chartOptions.xaxis!"
-    [grid]="chartOptions.grid!"
-    [colors]="chartOptions.colors!"
-    [legend]="chartOptions.legend!"
-    [responsive]="chartOptions.responsive!"
-  ></apx-chart>
-
-  <apx-chart
-    #chart
-    [series]="chartOptions2.series!"
-    [chart]="chartOptions2.chart!"
-    [xaxis]="chartOptions2.xaxis!"
-    [stroke]="chartOptions2.stroke!"
-    [fill]="chartOptions2.fill!"
-    [dataLabels]="chartOptions2.dataLabels!"
-    [colors]="chartOptions2.colors!"
-    [legend]="chartOptions2.legend!"
-    [responsive]="chartOptions2.responsive!"
-  ></apx-chart>
-  <!-- </ng-template>
-    <ng-template swiperSlide>
+  <div class="charts-container">
+    <img (click)="chartsSlider()" src="../../assets/images/right.png" alt="" />
+    <div [hidden]="!showChart1" id="chart">
       <apx-chart
+        *ngIf="showChart1"
         #chart
         [series]="chartOptions.series!"
         [chart]="chartOptions.chart!"
@@ -81,7 +45,24 @@
         [grid]="chartOptions.grid!"
         [colors]="chartOptions.colors!"
         [legend]="chartOptions.legend!"
+        [responsive]="chartOptions.responsive!"
       ></apx-chart>
-    </ng-template>
-  </swiper> -->
+    </div>
+    <div [hidden]="!showChart2" id="chart">
+      <apx-chart
+        *ngIf="showChart2"
+        #chart
+        [series]="chartOptions2.series!"
+        [chart]="chartOptions2.chart!"
+        [xaxis]="chartOptions2.xaxis!"
+        [stroke]="chartOptions2.stroke!"
+        [fill]="chartOptions2.fill!"
+        [dataLabels]="chartOptions2.dataLabels!"
+        [colors]="chartOptions2.colors!"
+        [legend]="chartOptions2.legend!"
+        [responsive]="chartOptions2.responsive!"
+      ></apx-chart>
+    </div>
+    <img (click)="chartsSlider()" src="../../assets/images/left.png" alt="" />
+  </div>
 </div>

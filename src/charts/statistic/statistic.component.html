@@ -54,8 +54,15 @@
         </ul>
       </div>
       <div class="spline-container">
-        <div id="chart">
+        <img
+          (click)="chartsSlider()"
+          src="../../assets/images/right.png"
+          alt=""
+        />
+
+        <div id="chart" [hidden]="!showChart1">
           <apx-chart
+            *ngIf="showChart1"
             [series]="chartOptions.series!"
             [chart]="chartOptions.chart!"
             [xaxis]="chartOptions.xaxis!"
@@ -67,8 +74,9 @@
           >
           </apx-chart>
         </div>
-        <div id="chart">
+        <div id="chart" [hidden]="!showChart2">
           <apx-chart
+            *ngIf="showChart2"
             [series]="ChartOptions2.series!"
             [chart]="ChartOptions2.chart!"
             [xaxis]="ChartOptions2.xaxis!"
@@ -77,12 +85,15 @@
             [dataLabels]="ChartOptions2.dataLabels!"
             [colors]="ChartOptions2.colors!"
             [legend]="ChartOptions2.legend!"
-
-
-
           >
           </apx-chart>
         </div>
+
+        <img
+          (click)="chartsSlider()"
+          src="../../assets/images/left.png"
+          alt=""
+        />
       </div>
     </div>
   </div>

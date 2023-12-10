@@ -54,8 +54,13 @@ h2 {
     }
 
     .spline-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
       #chart {
         margin-top: 100px;
+        width: 100%;
       }
     }
   }
